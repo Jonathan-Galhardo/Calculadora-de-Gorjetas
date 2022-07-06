@@ -11,11 +11,21 @@
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
-    */{
-      margin: 0;
-      padding: 0;
+   
+
+    span{
+      font-size: 11px; 
+   
     }
-    .attribution { font-size: 11px; text-align: left; }
+
+    #conta{
+      text-align: right;
+    }
+
+    .attribution { 
+      font-size: 11px; text-align: left;
+    }
+
     .botao{ 
       color: hsl(225, 100%, 99%);
       background: hsl(228, 45%, 44%);
@@ -27,68 +37,141 @@
       margin-bottom: 5px;
     }
 
-    .card{
-      padding: 20px;
+    #cartao1{
+      display: inline-block;
+      width: 295px;
+    
     }
 
+    #cartao2{
+      width: 295px;
+      display: inline-block;
+      
+     
+    }
+
+    #gorjeta1{
+      text-align: right ;
+    }
     #gorjeta{
-      width: 67px;
+      width: 50px;
       margin-bottom: 5px;
+      text-align: center;
+      font-size: 20px;
+      border: solid 1px rgb(95, 92, 92);
+      height: 40px;
+    }
+
+    #totalgorjeta{
+      width: 100px;
+      height: 50px;
+      margin-bottom: 10px;
+      margin-right: 0;
+      margin-top: 10px;
       text-align: right;
       font-size: 20px;
-      border: solid 1px #000;
-      box-shadow: 1px 1px 1px #000;
     }
+
+    #totalpessoa{
+      width: 100px;
+      height: 50px;
+      margin-bottom: 10px;
+      margin-right: 0;
+      margin-top: 25px;
+      text-align: right;
+      font-size: 20px;
+      margin-right: 0px;
+    }    
+    .card{
+      width: 300px;
+      height: 300px;
+      padding: 20px;
+    
+    }
+    
+    .card2{
+      background: rgb(61, 120, 138);
+    }
+
+    .flex{
+      display:flex;
+      gap: var(--gap, 5rem);}
+
+  
+
+   .reset{
+    margin-top: 40px;
+   }
+
+   .container{
+    border: 1px solid rgb(10, 10, 10);
+    text-align: center;
+    padding-bottom: 45px;
+    padding-top: 45px;
+    background: rgb(153, 174, 214);
+    
+   }
+    
   </style>
 </head>
 <body>
 
-  <div class="container mt-5">
-    <div class="row">
-      <div class="col d-flex justify-content-center">
-        <div class="calculadora card" >
-          <div>
-            <h5 class="card-title attribution ">Total da Conta</h5> 
-            <input id="conta" type="text" class="form-control resultado" placeholder="0"/>
-          </div>
-          <h5 class="attribution">Selecione o % de Gorjeta</h5>
-          <div class="btn-group">
-            <button type="button" class="btn botao mr-1 mb-1 ">5%</button> 
+  <div class="container">
+    <section id="cartao1">
+      <div class="card">
+        <div class="flex">
+          <h5 class="card-title attribution ">Total da Conta</h5> 
+        </div>
+        <input id="conta" type="text" class="form-control resultado" placeholder="R$"/>
+        <h5  class="attribution">Selecione o % de Gorjeta</h5>
+        <div class="card1">
+          <div class="btn-group mr-2">
+            <button type="button-lg" class="btn botao mr-1 mb-1 ">5%</button> 
             <button type="button" class="btn botao mr-1 mb-1 ">10%</button> 
-            <button type="button" class="btn botao mb-1 ">15%</button> 
+            <button type="button-sm" class="btn botao mb-1 ">15%</button> 
           </div>
-          <div class="btn-group">
+        
+          <div class="btn-group mr-2">
+            <button type="button" class="btn botao mr-1 mb-1 ">20%</button> 
             <button type="button" class="btn botao mr-1 mb-1 ">25%</button> 
-            <button type="button" class="btn botao mr-1 mb-1 ">30%</button> 
-            <input id="gorjeta" class="btn btn-light " type="text" class="form-control" placeholder="0" />
+            <input id="gorjeta" class="btn btn-light " type="text" class="form-control" placeholder="0" /> 
           </div>
           <div>
             <h5 class="attribution">Quantidade de pessoas</h5>
-            <input id="gorjeta" type="text" class="form-control resultado" placeholder="0" />
+            <input id="gorjeta1" type="text" class="form-control resultado" placeholder="0" />
           </div>
         </div>
       </div>
-    </div>
-  </div>
+    </section>
+
+    <section id="cartao2">
+      <div class="card card2">
+        <div class="flex">
+          <h5 class="card-title attribution ">Total gorjeta <br> <span>/ pessoa</span></h5>
+          <input id="totalgorjeta" class="btn btn-light " type="text" class="form-control" placeholder="R$" disabled="disabled" />
+        </div>
+        <div class="flex">
+          <h5 class="card-title attribution ">Total conta <br><span> p/ pessoa</span></h5>
+          <input id="totalpessoa" class="btn btn-light " type="text" class="form-control" placeholder="R$" disabled="disabled" />
+        </div>            
+   
+            <button type="button" class="btn botao mr-1 mb-1 reset ">Novo cálculo</button> 
+      
+      </div>
+    </section>        
+  </div> 
+
+   
+        
+          
+   
+    
   
 
     
-
-          
-
-        </div>
-
-      </div>
-      
-      
-    </div>
-
-  </div>
-
-    
   <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Challenge by Frontend Mentor</a>. 
+    Coded by <a href="https://github.com/Jonathan-Galhardo">Jonathan Galhardo</a>.
   </div>
 </body>
 </html>
