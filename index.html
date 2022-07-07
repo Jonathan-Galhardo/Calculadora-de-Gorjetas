@@ -1,177 +1,89 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Tip calculator app</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
    
-
-    span{
-      font-size: 11px; 
-   
-    }
-
-    #conta{
-      text-align: right;
-    }
-
-    .attribution { 
-      font-size: 11px; text-align: left;
-    }
-
-    .botao{ 
-      color: hsl(225, 100%, 99%);
-      background: hsl(228, 45%, 44%);
-      width: 100%;
-    }
-
-    h5{
-      margin-top: 15px;
-      margin-bottom: 5px;
-    }
-
-    #cartao1{
-      display: inline-block;
-      width: 295px;
-    
-    }
-
-    #cartao2{
-      width: 295px;
-      display: inline-block;
-      
-     
-    }
-
-    #gorjeta1{
-      text-align: right ;
-    }
-    #gorjeta{
-      width: 50px;
-      margin-bottom: 5px;
-      text-align: center;
-      font-size: 20px;
-      border: solid 1px rgb(95, 92, 92);
-      height: 40px;
-    }
-
-    #totalgorjeta{
-      width: 100px;
-      height: 50px;
-      margin-bottom: 10px;
-      margin-right: 0;
-      margin-top: 10px;
-      text-align: right;
-      font-size: 20px;
-    }
-
-    #totalpessoa{
-      width: 100px;
-      height: 50px;
-      margin-bottom: 10px;
-      margin-right: 0;
-      margin-top: 25px;
-      text-align: right;
-      font-size: 20px;
-      margin-right: 0px;
-    }    
-    .card{
-      width: 300px;
-      height: 300px;
-      padding: 20px;
-    
-    }
-    
-    .card2{
-      background: rgb(61, 120, 138);
-    }
-
-    .flex{
-      display:flex;
-      gap: var(--gap, 5rem);}
-
-  
-
-   .reset{
-    margin-top: 40px;
-   }
-
-   .container{
-    border: 1px solid rgb(10, 10, 10);
-    text-align: center;
-    padding-bottom: 45px;
-    padding-top: 45px;
-    background: rgb(153, 174, 214);
-    
-   }
-    
-  </style>
-</head>
-<body>
-
-  <div class="container">
-    <section id="cartao1">
-      <div class="card">
-        <div class="flex">
-          <h5 class="card-title attribution ">Total da Conta</h5> 
+    <title>Dividindo a conta</title>
+  </head>
+  <body>
+    <div id="cabecalho" class="main">
+      <div class="logo">
+        <img src="./imagens/logo.svg">
+      </div>
+      <div class="calculadora">
+        <div class="input">
+          <div class="conta">
+            <p class="entrada f-left">Conta</p>
+            <p id="conta-zerada" class="erro"> Não pode ser zero</p>
+            <div class="input-conta">
+              <div class="icone-dolar">
+                <img src="./imagens/icon-dollar.svg">
+              </div>
+              <div class="total-conta">
+                <input id="total-conta" type="numero" decimal="true" placeholder="0.00">
+              </div>
+            </div>
+          </div>
+          <div class="selecao">
+            <p class="entrada ">Selecione a %</p>
+          </div>
+          <div id="botoes">
+            <div><button id="5p" class="btn-porc">5%</button></div>
+            <div><button id="10p" class="btn-porc">10%</button></div>
+            <div><button id="15p" class="btn-porc">15%</button></div>
+            <div><button id="20p" class="btn-porc">20%</button></div>
+            <div><button id="20p" class="btn-porc">20%</button></div>
+            <div id="digita">
+              <input id="customp" class="custom-input">
+            </div>
+          </div>
+          <div class="numero-pessoas">
+            <p class="entrada f-left">Número de pessoas</p>
+            <p id="pessoas-nao-zero" class="erro"> Não pode ser zero!</p>
+            <div class="qtd-pessoas">
+              <div class="icone-pessoas">
+                <img src="./imagens/icon-person.svg">
+              </div>
+              <div class="valor-pessoa">
+                <input id="pessoa_valor">
+              </div>
+            </div>
+          </div>
         </div>
-        <input id="conta" type="text" class="form-control resultado" placeholder="R$"/>
-        <h5  class="attribution">Selecione o % de Gorjeta</h5>
-        <div class="card1">
-          <div class="btn-group mr-2">
-            <button type="button-lg" class="btn botao mr-1 mb-1 ">5%</button> 
-            <button type="button" class="btn botao mr-1 mb-1 ">10%</button> 
-            <button type="button-sm" class="btn botao mb-1 ">15%</button> 
+        <div class="resultado">
+          <div class="resultado-resultado-total">
+            <div class="gorjeta-total">
+              <div class="gorjeta-total-title">
+                <p class="resultado-box-title">Gorjeta</p>
+                <p class="resultado-por-pessoa">/ pessoa</p>
+              </div>
+              <div class="gorjeta-total-valor">
+                <span id="valor_da_gorjeta">R$0.00</span>
+              </div>
+            </div>
+            <div class="total-gorjeta">
+              <div class="total-gorjeta-title">
+                <p class="resultado-box-title">Total</p>
+                <p class="resultado-por-pessoa">/ pessoa</p>
+              </div>
+              <div class="total-gorjeta-valor">
+                <span id="total_gorjeta_valor">R$0.00</span>
+              </div>
+            </div>
           </div>
-        
-          <div class="btn-group mr-2">
-            <button type="button" class="btn botao mr-1 mb-1 ">20%</button> 
-            <button type="button" class="btn botao mr-1 mb-1 ">25%</button> 
-            <input id="gorjeta" class="btn btn-light " type="text" class="form-control" placeholder="0" /> 
-          </div>
-          <div>
-            <h5 class="attribution">Quantidade de pessoas</h5>
-            <input id="gorjeta1" type="text" class="form-control resultado" placeholder="0" />
+          <div class="resultado-btn-reset">
+            <button class="btn-reset">Novo Cálculo</button>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="http://www.seguchi.net">Jonathan Galhardo</a>.
+    </div>
 
-    <section id="cartao2">
-      <div class="card card2">
-        <div class="flex">
-          <h5 class="card-title attribution ">Total gorjeta <br> <span>/ pessoa</span></h5>
-          <input id="totalgorjeta" class="btn btn-light " type="text" class="form-control" placeholder="R$" disabled="disabled" />
-        </div>
-        <div class="flex">
-          <h5 class="card-title attribution ">Total conta <br><span> p/ pessoa</span></h5>
-          <input id="totalpessoa" class="btn btn-light " type="text" class="form-control" placeholder="R$" disabled="disabled" />
-        </div>            
-   
-            <button type="button" class="btn botao mr-1 mb-1 reset ">Novo cálculo</button> 
-      
-      </div>
-    </section>        
-  </div> 
-
-   
-        
-          
-   
-    
-  
-
-    
-  <div class="attribution">
-    Challenge by Frontend Mentor</a>. 
-    Coded by <a href="https://github.com/Jonathan-Galhardo">Jonathan Galhardo</a>.
-  </div>
-</body>
+    <script src="javascript.js"></script>
+  </body>
 </html>
