@@ -10,7 +10,7 @@
   <body>
     <div id="cabecalho" class="main">
       <div class="logo">
-        <img src="./imagens/logo.svg">
+        <img src="./imagens/contalogo.png">
       </div>
       <div class="calculadora">
         <div class="input">
@@ -22,21 +22,21 @@
                 <img src="./imagens/icon-dollar.svg">
               </div>
               <div class="total-conta">
-                <input id="total-conta" type="numero" decimal="true" placeholder="0.00">
+                <input type="number"  name="total-conta" id="total-conta" placeholder="0.00">
               </div>
             </div>
           </div>
           <div class="selecao">
-            <p class="entrada ">Selecione a %</p>
+            <p class="entrada ">Gorjeta </p>
           </div>
           <div id="botoes">
-            <div><button id="5p" class="btn-porc">5%</button></div>
-            <div><button id="10p" class="btn-porc">10%</button></div>
-            <div><button id="15p" class="btn-porc">15%</button></div>
-            <div><button id="20p" class="btn-porc">20%</button></div>
-            <div><button id="20p" class="btn-porc">20%</button></div>
+            <div><button id="5p" onclick="clicar()" class="btn-porc">5%</button></div>
+            <div><button id="10p" onclick="clicar(10)" class="btn-porc">10%</button></div>
+            <div><button id="15p" onclick="clicar(15)"class="btn-porc">15%</button></div>
+            <div><button id="20p" onclick="clicar(20)"class="btn-porc">20%</button></div>
+            <div><button id="25p" onclick="clicar(25)"class="btn-porc">25%</button></div>
             <div id="digita">
-              <input id="customp" class="custom-input">
+              <input type="number" name="customp" id="customp" class="custom-input">
             </div>
           </div>
           <div class="numero-pessoas">
