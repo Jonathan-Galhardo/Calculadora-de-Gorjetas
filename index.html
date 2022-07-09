@@ -29,16 +29,12 @@
           <div class="selecao">
             <p class="entrada ">Gorjeta </p>
           </div>
-          <div id="botoes">
-            <div><button id="5p" onclick="clicar()" class="btn-porc">5%</button></div>
-            <div><button id="10p" onclick="clicar(10)" class="btn-porc">10%</button></div>
-            <div><button id="15p" onclick="clicar(15)"class="btn-porc">15%</button></div>
-            <div><button id="20p" onclick="clicar(20)"class="btn-porc">20%</button></div>
-            <div><button id="25p" onclick="clicar(25)"class="btn-porc">25%</button></div>
-            <div id="digita">
-              <input type="number" name="customp" id="customp" class="custom-input">
-            </div>
+          <div id="digita">
+            <input type="number" name="customp" id="customp" class="custom-input">
           </div>
+          <div id="botoes"></div>
+              
+          
           <div class="numero-pessoas">
             <p class="entrada f-left">Número de pessoas</p>
             <p id="pessoas-nao-zero" class="erro"> Não pode ser zero!</p>
@@ -74,7 +70,8 @@
             </div>
           </div>
           <div class="resultado-btn-reset">
-            <button class="btn-reset">Novo Cálculo</button>
+          
+            <button type="button" value="Somar" onclick="somar()" class="btn-reset">Calcular</button>
           </div>
         </div>
       </div>
@@ -84,6 +81,23 @@
       Coded by <a href="http://www.seguchi.net">Jonathan Galhardo</a>.
     </div>
 
-    <script src="javascript.js"></script>
+    <script>
+       function somar(){
+            var tn1 = window.document.getElementById('total-conta')
+            var tn2 = window.document.getElementById('customp')
+            var pessoas = window.document.getElementById('pessoa_valor')
+            var resultado = window.document.getElementById('valor_da_gorjeta')
+            var n1 = Number(tn1.value)
+            var n2 = Number(tn2.value)
+            var n3 = Number(pessoas.value)
+            var n2 = 1 + (n2/100)
+            var s = (n1 * n2)
+            valor_da_gorjeta.innerText = s
+            var t = s / n3
+            total_gorjeta_valor.innerText = t
+
+            var pessoas = window.document.getElementById('pessoas')
+        }
+    </script>
   </body>
 </html>
