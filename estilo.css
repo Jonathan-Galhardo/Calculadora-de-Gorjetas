@@ -18,7 +18,7 @@ a:hover {
 body {
 	margin: 10px;
 	text-align: center;
-	background-color: hsl(185, 41%, 84%);
+	background-color:#B5F7BD;
 	font-family: 'Space Mono', monospace;
 	font-weight: 700;
 }
@@ -59,7 +59,7 @@ input {
 	flex-direction: column;
 	justify-content: space-between;
 	width: 50%;
-	background-color: hsl(183, 100%, 15%);
+	background-color:#3C6B3D;
 	border-radius: 15px;
 	padding: 15px;
 }
@@ -124,17 +124,11 @@ input {
 	color: hsl(186, 14%, 43%);
 }
 
+#digita ::placeholder {
+	height: 50px;
 
-#botoes {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	gap: 10px;
 }
 
-#botoes>div {
-	width: 30%;
-}
 
 .btn-porc {
 	background-color: hsl(183, 100%, 15%);
@@ -152,7 +146,7 @@ button,
 	padding: 3px;
 	font-family: 'Space Mono', monospace;
 	font-weight: 700;
-	font-size: 18px;
+	font-size: 23px;
 	border-radius: 5px;
 	border: none;
 	color: white;
@@ -163,13 +157,9 @@ button:hover {
 	color: white;
 }
 
-.active {
-	background-color: #da9a35;
-}
-
 .custom-input {
-	width: 100px;
-	text-align: center;
+	width: 100%;
+	text-align: right;
 	color: hsl(186, 14%, 43%);
 	background-color: hsl(189, 41%, 97%);
 	border-radius: 5px;
@@ -178,6 +168,8 @@ button:hover {
 
 ::placeholder {
 	color: hsl(184, 14%, 56%);
+	position: absolute;
+	
 }
 
 input:focus {
@@ -195,7 +187,7 @@ input:focus {
 .total-gorjeta,
 .gorjeta-total {
 	text-align: left;
-	align-items: center;
+	
 	margin: 20px 10px;
 }
 
@@ -287,8 +279,6 @@ input[type=numero] {
 		margin: 0px;
 	}
 
-	#botoes>div {
-		width: 45%;
-	}
+	
 
 }

@@ -22,17 +22,18 @@
                 <img src="./imagens/icon-dollar.svg">
               </div>
               <div class="total-conta">
-                <input type="number"  name="total-conta" id="total-conta" placeholder="0.00">
+                <input type="number"  name="total-conta" id="total-conta" placeholder="R$ 0.00">
               </div>
             </div>
           </div>
           <div class="selecao">
             <p class="entrada ">Gorjeta </p>
+            <p id="conta-zerada" class="erro"> Não pode ser zero</p>
           </div>
           <div id="digita">
-            <input type="number" name="customp" id="customp" class="custom-input">
+            <input type="number" name="customp" id="customp" class="custom-input" placeholder="% 0">
           </div>
-          <div id="botoes"></div>
+          <br>
               
           
           <div class="numero-pessoas">
@@ -43,7 +44,7 @@
                 <img src="./imagens/icon-person.svg">
               </div>
               <div class="valor-pessoa">
-                <input id="pessoa_valor">
+                <input id="pessoa_valor" placeholder="0">
               </div>
             </div>
           </div>
@@ -52,11 +53,11 @@
           <div class="resultado-resultado-total">
             <div class="gorjeta-total">
               <div class="gorjeta-total-title">
-                <p class="resultado-box-title">Gorjeta</p>
-                <p class="resultado-por-pessoa">/ pessoa</p>
+                <p class="resultado-box-title">Total Conta</p>
+               
               </div>
               <div class="gorjeta-total-valor">
-                <span id="valor_da_gorjeta">R$0.00</span>
+                <span id="valor_da_gorjeta">R$ 0.00</span>
               </div>
             </div>
             <div class="total-gorjeta">
@@ -65,7 +66,7 @@
                 <p class="resultado-por-pessoa">/ pessoa</p>
               </div>
               <div class="total-gorjeta-valor">
-                <span id="total_gorjeta_valor">R$0.00</span>
+                <span id="total_gorjeta_valor">R$ 0.00</span>
               </div>
             </div>
           </div>

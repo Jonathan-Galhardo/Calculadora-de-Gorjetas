@@ -8,9 +8,11 @@ function somar(){
     var n3 = Number(pessoas.value)
     var n2 = 1 + (n2/100)
     var s = (n1 * n2)
-    valor_da_gorjeta.innerText = s
-    var t = s / n3
-    total_gorjeta_valor.innerText = t
-
-    var pessoas = window.document.getElementById('pessoas')
+    var sf = s.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
+    var t = s / n3 
+    var tf = t.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
+    valor_da_gorjeta.innerText = sf
+    total_gorjeta_valor.innerText = tf
+    
+   
 }
