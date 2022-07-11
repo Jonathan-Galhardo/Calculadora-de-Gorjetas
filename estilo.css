@@ -152,6 +152,10 @@ button,
 	color: white;
 }
 
+span{
+	font-size: 0.8em;
+}
+
 button:hover {
 	background-color: #da9a35;
 	color: white;
